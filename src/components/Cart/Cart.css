@@ -1,0 +1,114 @@
+.cartMain {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  left: 59%;
+  top: 5%;
+  position: fixed;
+  width: 40%;
+  height: 90%;
+  background-color: #a1c4c7;
+  border-radius: 8px;
+}
+
+.closeBtnDiv {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: start;
+  margin: 10px;
+}
+
+.closeBtnDiv button {
+  width: 50px;
+  height: 40px;
+}
+
+.cartDiv {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+.cartItem {
+  width: 100%;
+  background-color: #ffffff;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+.cartItem p {
+  width: 140px;
+}
+
+.cartItem h3 {
+  width: 50px;
+}
+
+.cartItem img {
+  width: 20%;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.countBtns button {
+  width: 30px;
+  height: 30px;
+}
+
+.delDiv {
+  width: 20%;
+  display: flex;
+  justify-content: end;
+}
+
+.delete {
+  background-color: lightcoral;
+  width: 80px;
+  height: 30px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+.delete:hover{
+  background-color: rgb(239, 173, 173);
+}
+
+.totalDiv {
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  background-color: white;
+  height: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.totalDiv button {
+  width: 120px;
+  height: 40px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: lightgreen;
+}
+
+.totalDiv button:hover {
+  background-color: rgb(181, 240, 181);
+}

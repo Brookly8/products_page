@@ -1,0 +1,53 @@
+header {
+  display: flex;
+  padding: 1%;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: white;
+  margin: 1%;
+  border-radius: 8px;
+  box-shadow: 10px 5px 5px rgb(215, 215, 215);
+}
+
+.searchDiv {
+  display: flex;
+  gap: 5%;
+  width: 60%;
+  height: 60%;
+}
+
+.searchDiv input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.searchDiv button {
+  width: 130px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.searchDiv button:hover {
+  background-color: rgb(180, 180, 180);
+  border: 1px solid gray;
+}
+
+.cartButton {
+  width: 130px;
+  height: 60%;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.cartButton:hover {
+  background-color: rgb(180, 180, 180);
+  border: 1px solid gray;
+}
+
+#form {
+  width: 130px;
+  height: 60%;
+  border-radius: 8px;
+}
