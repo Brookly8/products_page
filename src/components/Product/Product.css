@@ -1,0 +1,24 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.productDiv {
+  background-color: white;
+  margin: 17px;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 10px 5px 5px rgb(215, 215, 215);
+}
+
+.addBtn {
+  width: 25%;
+  height: 40px;
+  border-radius: 8px;
+  border: 0px;
+}
+
+.addBtn:hover {
+  background-color: rgb(180, 180, 180);
+  border: 1px solid gray;
+}

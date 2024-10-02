@@ -35,3 +35,16 @@ export const allCategories = (products) => {
 export const productsFilter = (category, setCategory, products) => {
   setCategory([...products.filter((item) => item.category === category)]);
 };
+
+export function addToCart(product, cart, setCart) {
+  let isProductInCart = cart.filter((p) => p.id === product.id);
+
+  if (isProductInCart.length > 0) {
+    let updCart = cart.map((el) =>
+      el.id === product.id ? { ...el, countInCart: el.countInCart + 1 } : el
+    );
+    setCart(updCart);
+  } else {
+    setCart([...cart, { ...product, countInCart: 1 }]);
+  }
+}

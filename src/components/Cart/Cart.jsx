@@ -72,5 +72,7 @@ export default function Cart({ isCartOpen, setIsCartOpen, cart, setCart }) {
         </button>
       </div>
     </div>
+
+    
   );
 }

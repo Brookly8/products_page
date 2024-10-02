@@ -5,6 +5,8 @@ import ItemsList from "./components/itemsList/itemsList";
 import Header from "./components/Header/Header";
 import { productsFilter } from "./assets/helpFunctions";
 import { getSearchedData } from "./api/api";
+import { Route, Routes } from "react-router-dom";
+import { Product } from "./components/Product/Product";
 
 let api = "https://dummyjson.com/products?limit=50";
 let searchApi = "https://dummyjson.com/products/search?q=";
@@ -15,6 +17,7 @@ function App() {
   const [categories, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [input, setInput] = useState("");
+  const [product, setProduct] = useState({});
 
   const onSearchClick = async () => {
     setCategory(await getSearchedData(searchApi, input));
@@ -50,7 +53,27 @@ function App() {
         products={products}
         onChangeCategory={onChangeCategory}
       />
-      <ItemsList products={categories} cart={cart} setCart={setCart} />
+      <Routes>
+        <Route
+          path="/products_page"
+          element={
+            <ItemsList
+              products={categories}
+              cart={cart}
+              setCart={setCart}
+              setProduct={setProduct}
+            />
+          }
+        ></Route>
+      </Routes>
+      <Routes>
+        <Route
+          path="/products_page/product"
+          element={
+            <Product product={product} cart={cart} setCart={setCart}></Product>
+          }
+        ></Route>
+      </Routes>
     </>
   );
 }

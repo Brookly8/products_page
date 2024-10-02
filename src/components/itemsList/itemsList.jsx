@@ -2,20 +2,14 @@ import React, { useEffect, useState } from "react";
 import { getReview } from "../../assets/helpFunctions";
 import { getDiscount } from "../../assets/helpFunctions";
 import "./itemsList.css";
+import { Link } from "react-router-dom";
+import { addToCart } from "../../assets/helpFunctions";
 
-export default function ({ products, cart, setCart }) {
-  function addToCart(product) {
-    let isProductInCart = cart.filter((p) => p.id === product.id);
+export default function ({ products, cart, setCart, setProduct }) {
+  const openItem = (item) => {
+    setProduct(item);
+  };
 
-    if (isProductInCart.length > 0) {
-      let updCart = cart.map((el) =>
-        el.id === product.id ? { ...el, countInCart: el.countInCart + 1 } : el
-      );
-      setCart(updCart);
-    } else {
-      setCart([...cart, { ...product, countInCart: 1 }]);
-    }
-  }
   return (
     <div className="itemsList">
       {products.map((item) => {
@@ -24,7 +18,9 @@ export default function ({ products, cart, setCart }) {
             <div className="image">
               <img src={item.thumbnail} alt="" />
             </div>
-            <h3>{item.title}</h3>
+            <h3 onClick={() => openItem(item)}>
+              <Link to="/products_page/product">{item.title}</Link>
+            </h3>
             <p>{item.description}</p>
             <h3>⭐️ {getReview(item.reviews)}</h3>
             <p>{item.tags.map((tag) => " " + tag)}</p>
@@ -34,7 +30,9 @@ export default function ({ products, cart, setCart }) {
               {item.discountPercentage}%)
             </h2>
             <div className="addButton">
-              <button onClick={() => addToCart(item)}>Add to cart</button>
+              <button onClick={() => addToCart(item, cart, setCart)}>
+                Add to cart
+              </button>
             </div>
           </div>
         );
