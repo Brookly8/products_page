@@ -25,7 +25,6 @@ export const totalItemsCost = (cart) => {
   return total.toFixed(2);
 };
 
-
 export const allCategories = (products) => {
   let filteredList = [];
   const allCategories = products.map((item) => item.category);

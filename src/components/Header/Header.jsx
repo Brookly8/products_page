@@ -45,7 +45,7 @@ export default function Header({
           />
         </div>
         <button onClick={openCart} className="cartButton">
-          My Cart
+          My Cart {cart.length}
         </button>
       </header>
     </>

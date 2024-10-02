@@ -16,10 +16,18 @@ export default function ({ products, cart, setCart, setProduct }) {
         return (
           <div className="item" key={item.id}>
             <div className="image">
-              <img src={item.thumbnail} alt="" />
+              <Link className="title" to="/products_page/product">
+                <img
+                  onClick={() => openItem(item)}
+                  src={item.thumbnail}
+                  alt=""
+                />
+              </Link>
             </div>
             <h3 onClick={() => openItem(item)}>
-              <Link to="/products_page/product">{item.title}</Link>
+              <Link className="title" to="/products_page/product">
+                {item.title}
+              </Link>
             </h3>
             <p>{item.description}</p>
             <h3>⭐️ {getReview(item.reviews)}</h3>
